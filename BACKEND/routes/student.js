@@ -21,7 +21,7 @@ router.route('/add').post((req,res) => {
 });
 
 router.route('/').get((req,res) => {
-    Students.find().then((students) => {
+    Student.find().then((students) => {
         res.json(students);
     }).catch((err) => {
         console.error(err.message);
@@ -67,7 +67,6 @@ router.route('/get/:id').get(async (req,res) => {
         console.error(err.message);
         res.status(500).json('Error fetching student');
     });
-});    
-
+}); 
 
 module.exports = router;
